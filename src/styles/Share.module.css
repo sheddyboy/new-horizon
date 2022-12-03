@@ -1,0 +1,68 @@
+.wrapper {
+  height: 100vh;
+  background-image: url("/public/sky.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 10px;
+}
+
+.top img {
+  margin-bottom: 20px;
+}
+
+.top h1 {
+  margin-bottom: 90px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+}
+
+.top button {
+  width: 158px;
+  height: 43px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 16px;
+  line-height: 16px;
+  color: #ffffff;
+  background: #55bbbc;
+  border: 1px solid #55bbbc;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.bottom button {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  width: 133px;
+  height: 43px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 16px;
+  line-height: 16px;
+  color: #ffffff;
+}

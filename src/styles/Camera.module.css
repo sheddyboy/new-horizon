@@ -1,0 +1,56 @@
+.wrapper {
+  height: 100vh;
+  padding: 150px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.top h1 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 25px;
+  line-height: 30px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: #000000;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.retake {
+  width: 113px;
+  height: 43px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  color: #000000;
+}
+
+.next {
+  width: 113px;
+  height: 43px;
+  background-color: #000000;
+  border: 1px solid #000000;
+  color: #ffffff;
+}
+
+.retake:disabled,
+.next:disabled {
+  opacity: 0.2;
+}

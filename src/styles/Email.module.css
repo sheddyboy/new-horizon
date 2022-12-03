@@ -1,0 +1,66 @@
+.wrapper {
+  height: 100vh;
+  padding: 153px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top {
+  display: flex;
+}
+
+.top .inputWrapper {
+  width: 100%;
+  padding: 0px 20px;
+}
+.top .inputWrapper input {
+  width: 100%;
+  border: none;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #000000;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 16px;
+  line-height: 16px;
+  color: #000000;
+}
+.top .inputWrapper input::placeholder {
+  color: #000000;
+}
+.bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.cancel {
+  width: 133px;
+  height: 43px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 16px;
+  line-height: 16px;
+  color: #000000;
+}
+.send {
+  width: 133px;
+  height: 43px;
+  border: 1px solid #000000;
+  background-color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 16px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.send:disabled {
+  opacity: 0.2;
+}
