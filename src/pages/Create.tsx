@@ -30,7 +30,7 @@ const Create = () => {
               <img src="/Photo-booth2 1.png" alt="" />
             </div>
             <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 3 (2).png" alt="" />
+              <img src="/Photo-booth2 5 (1).png" alt="" />
             </div>
             <div className={styles.galleryImage}>
               <img src="/Photo-booth2 3 (1).png" alt="" />
@@ -39,7 +39,7 @@ const Create = () => {
               <img src="/Photo-booth2 1.png" alt="" />
             </div>
             <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 3 (2).png" alt="" />
+              <img src="/Photo-booth2 5 (1).png" alt="" />
             </div>
           </Slider>
           <Slider {...settings}>
@@ -50,7 +50,7 @@ const Create = () => {
               <img src="/Photo-booth 2.png" alt="" />
             </div>
             <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 4 (1).png" alt="" />
+              <img src="/Photo-booth2 6.png" alt="" />
             </div>
             <div className={styles.galleryImage}>
               <img src="/Photo-booth 1.png" alt="" />
@@ -59,7 +59,7 @@ const Create = () => {
               <img src="/Photo-booth 2.png" alt="" />
             </div>
             <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 4 (1).png" alt="" />
+              <img src="/Photo-booth2 6.png" alt="" />
             </div>
           </Slider>
         </div>
