@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styles from "../styles/Create.module.scss";
-import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const Create = () => {
   const [slider, setSlider] = useState(0);
@@ -10,58 +11,61 @@ const Create = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSlider(Number(e.target.value));
   };
-  const settings = {
-    // className: "center",
-    // centerMode: true,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    speed: 500,
-  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.galleryWrapper}>
         <div className={styles.gallary}>
-          <Slider {...settings}>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 3 (1).png" alt="" />
-            </div>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 1.png" alt="" />
-            </div>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 5 (1).png" alt="" />
-            </div>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 3 (1).png" alt="" />
-            </div>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 1.png" alt="" />
-            </div>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 5 (1).png" alt="" />
-            </div>
-          </Slider>
-          <Slider {...settings}>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth 1.png" alt="" />
-            </div>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth 2.png" alt="" />
-            </div>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 6.png" alt="" />
-            </div>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth 1.png" alt="" />
-            </div>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth 2.png" alt="" />
-            </div>
-            <div className={styles.galleryImage}>
-              <img src="/Photo-booth2 6.png" alt="" />
-            </div>
-          </Slider>
+          <Swiper
+            slidesPerView={"auto"}
+            centeredSlides={true}
+            spaceBetween={20}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <div className={styles.imageWrapperTop}>
+                <img src="/Photo-booth2 3 (1).png" alt="" />
+                <p>Vision</p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={styles.imageWrapperTop}>
+                <img src="/Photo-booth2 1.png" alt="" />
+                <p>Vision</p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={styles.imageWrapperTop}>
+                <img src="/Photo-booth2 5 (1).png" alt="" />
+                <p>Vision</p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+          <Swiper
+            slidesPerView={"auto"}
+            centeredSlides={true}
+            spaceBetween={20}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <div className={styles.imageWrapperBottom}>
+                <img src="/Photo-booth 1.png" alt="" />
+                <p>Action</p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={styles.imageWrapperBottom}>
+                <img src="/Photo-booth 2.png" alt="" />
+                <p>Action</p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={styles.imageWrapperBottom}>
+                <img src="/Photo-booth2 6.png" alt="" />
+                <p>Action</p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
         <div className={styles.gallarySlider}>
           <p className={styles.neutral}>Neutral</p>

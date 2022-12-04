@@ -15,6 +15,40 @@
   gap: 40px;
 }
 .gallary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.imageWrapperTop {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  p {
+    position: absolute;
+    top: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 25px;
+    color: #ffffff;
+  }
+}
+.imageWrapperBottom {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  p {
+    position: absolute;
+    bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 25px;
+    color: #ffffff;
+  }
 }
 
 .galleryImage {
