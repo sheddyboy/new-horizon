@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "../styles/Camera.module.css";
+import styles from "../styles/Camera.module.scss";
 import { useNavigate } from "react-router-dom";
 
 const Camera = () => {

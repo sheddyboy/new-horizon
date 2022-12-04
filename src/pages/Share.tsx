@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../styles/Share.module.css";
+import styles from "../styles/Share.module.scss";
 import { useNavigate } from "react-router-dom";
 
 const Share = () => {

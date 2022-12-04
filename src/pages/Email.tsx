@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import styles from "../styles/Email.module.css";
+import styles from "../styles/Email.module.scss";
 import { useNavigate } from "react-router-dom";
 
 const Email = () => {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../styles/Create.module.css";
+import styles from "../styles/Create.module.scss";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
 
