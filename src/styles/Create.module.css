@@ -111,6 +111,7 @@
   height: 31px;
   cursor: pointer;
   position: relative;
+  opacity: 0%;
   z-index: 3;
 }
 
