@@ -24,31 +24,53 @@
   position: relative;
   display: flex;
   justify-content: center;
-  p {
-    position: absolute;
-    top: 10px;
-    font-family: "Blue Sky Standard", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 25px;
-    color: #ffffff;
-  }
+  /* // p {
+  //   position: absolute;
+  //   top: 10px;
+  //   font-family: "Blue Sky Standard", sans-serif;
+  //   font-style: normal;
+  //   font-weight: 400;
+  //   font-size: 25px;
+  //   line-height: 25px;
+  //   color: #ffffff;
+  // } */
+}
+
+.imageWrapperTop p {
+  position: absolute;
+  top: 10px;
+  font-family: "Blue Sky Standard", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 25px;
+  color: #ffffff;
 }
 .imageWrapperBottom {
   position: relative;
   display: flex;
   justify-content: center;
-  p {
-    position: absolute;
-    bottom: 10px;
-    font-family: "Blue Sky Standard", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 25px;
-    color: #ffffff;
-  }
+  /* // p {
+  //   position: absolute;
+  //   bottom: 10px;
+  //   font-family: "Blue Sky Standard", sans-serif;
+  //   font-style: normal;
+  //   font-weight: 400;
+  //   font-size: 25px;
+  //   line-height: 25px;
+  //   color: #ffffff;
+  // } */
+}
+
+.imageWrapperBottom p {
+  position: absolute;
+  bottom: 10px;
+  font-family: "Blue Sky Standard", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 25px;
+  color: #ffffff;
 }
 
 .galleryImage {
