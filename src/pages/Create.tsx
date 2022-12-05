@@ -21,23 +21,25 @@ const Create = () => {
             centeredSlides={true}
             spaceBetween={20}
             className="mySwiper"
+            style={{ display: "flex", justifyContent: "center" }}
           >
+            <p className={styles.vision}>Vision</p>
             <SwiperSlide>
               <div className={styles.imageWrapperTop}>
                 <img src="/Photo-booth2 3 (1).png" alt="" />
-                <p>Vision</p>
+                {/* <p>Vision</p> */}
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className={styles.imageWrapperTop}>
                 <img src="/Photo-booth2 1.png" alt="" />
-                <p>Vision</p>
+                {/* <p>Vision</p> */}
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className={styles.imageWrapperTop}>
                 <img src="/Photo-booth2 5 (1).png" alt="" />
-                <p>Vision</p>
+                {/* <p>Vision</p> */}
               </div>
             </SwiperSlide>
           </Swiper>
@@ -46,23 +48,23 @@ const Create = () => {
             centeredSlides={true}
             spaceBetween={20}
             className="mySwiper"
+            style={{ display: "flex", justifyContent: "center" }}
           >
+            <p className={styles.action}>Action</p>
+
             <SwiperSlide>
               <div className={styles.imageWrapperBottom}>
                 <img src="/Photo-booth 1.png" alt="" />
-                <p>Action</p>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className={styles.imageWrapperBottom}>
                 <img src="/Photo-booth 2.png" alt="" />
-                <p>Action</p>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className={styles.imageWrapperBottom}>
                 <img src="/Photo-booth2 6.png" alt="" />
-                <p>Action</p>
               </div>
             </SwiperSlide>
           </Swiper>
