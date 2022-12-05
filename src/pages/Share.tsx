@@ -8,6 +8,7 @@ const Share = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.wrapper}>
+      <div className={styles.backgroungImage}></div>
       <div className={styles.top}>
         <img src="/LOGO.svg" alt="logo" />
         {!toggle && <h1>Share your horizon with NIO House Berlin</h1>}

@@ -6,6 +6,7 @@ function App() {
   const navigate = useNavigate();
   return (
     <div className={styles.wrapper}>
+      <div className={styles.backgroungImage}></div>
       <div className={styles.top}>
         <img src="/LOGO.svg" alt="logo" />
         <h1>Create Your Own Horizon</h1>
