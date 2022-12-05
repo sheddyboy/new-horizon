@@ -4,12 +4,17 @@ import { useNavigate } from "react-router-dom";
 
 const Email = () => {
   const [disabled, setDisabled] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
   const emailRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // setEmail(e.target.value);
-    setDisabled(emailRef.current?.value === "" ? true : false);
+    setDisabled(
+      emailRef.current?.value.includes("@") &&
+        emailRef.current?.value.includes(".")
+        ? false
+        : true
+    );
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,17 +39,26 @@ const Email = () => {
               handleChange(e);
             }}
           />
+          {!error && (
+            <p className={styles.info}>
+              NIO will not store or use the email for any other purpose than
+              sending the artwork.
+            </p>
+          )}
+          {error && (
+            <p className={styles.error}>Please type the right email address.</p>
+          )}
         </div>
       </div>
       <div className={styles.bottom}>
-        <button
+        <div
           className={styles.cancel}
           onClick={() => {
             navigate("/");
           }}
         >
           Cancel
-        </button>
+        </div>
         <button disabled={disabled} type="submit" className={styles.send}>
           Send
         </button>

@@ -15,6 +15,7 @@ const Create = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.galleryWrapper}>
+        <p className={styles.title}>Swipe left to choose your horizon</p>
         <div className={styles.gallary}>
           <Swiper
             slidesPerView={"auto"}
@@ -70,7 +71,7 @@ const Create = () => {
           </Swiper>
         </div>
         <div className={styles.gallarySlider}>
-          <p className={styles.neutral}>Neutral</p>
+          <p className={styles.neutral}>Original</p>
           <div className={styles.slider}>
             <input
               type="range"

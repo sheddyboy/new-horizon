@@ -1,6 +1,6 @@
 .wrapper {
   height: 100vh;
-  background-image: url("../../public/sky.png");
+  background-image: url("../../public/shareBackground.png");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px 10px;
+  margin: 0px 30px;
 }
 
 .top img {
@@ -22,7 +22,7 @@
 }
 
 .top h1 {
-  margin-bottom: 90px;
+  margin-bottom: 40px;
   font-family: "Blue Sky Standard", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -45,6 +45,60 @@
   color: #ffffff;
   background: #55bbbc;
   border: 1px solid #55bbbc;
+}
+
+.top button:disabled {
+  background-color: #cccccc;
+  border: #cccccc;
+}
+
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  .checkbox {
+    min-width: 13px;
+    height: 13px;
+    border: 1px solid #ffffff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .x {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .left {
+        width: 7px;
+        height: 1px;
+        background-color: #ffffff;
+        position: absolute;
+        transform: rotateZ(45deg);
+      }
+      .right {
+        width: 7px;
+        height: 1px;
+        background-color: #ffffff;
+        position: absolute;
+        transform: rotateZ(315deg);
+      }
+    }
+  }
+
+  p {
+    font-family: "Blue Sky Standard";
+    font-style: normal;
+    font-weight: 420;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: left;
+    color: #ffffff;
+  }
 }
 
 .bottom {
