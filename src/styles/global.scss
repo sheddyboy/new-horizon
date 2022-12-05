@@ -5,6 +5,10 @@
   outline: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 @font-face {
   font-family: "Blue Sky Standard";
   src: local("Blue Sky Standard Light"), local("Blue-Sky-Standard-Light"),
