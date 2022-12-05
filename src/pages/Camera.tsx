@@ -35,9 +35,9 @@ const Camera = () => {
       .catch((err) => console.error(err));
   };
 
-  useEffect(() => {
-    getVideo();
-  }, [videoRef]);
+  // useEffect(() => {
+  //   getVideo();
+  // }, [videoRef]);
 
   return (
     <div className={styles.wrapper}>
