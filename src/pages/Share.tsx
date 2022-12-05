@@ -9,7 +9,7 @@ const Share = () => {
     <div className={styles.wrapper}>
       <div className={styles.top}>
         <img src="/LOGO.svg" alt="logo" />
-        {!toggle && <h1>Share your horizon with Nio Berlin House</h1>}
+        {!toggle && <h1>Share your horizon with NIO House Berlin</h1>}
         {toggle && <h1>Shared! Check out the Gallery Screen</h1>}
         {!toggle && (
           <button
