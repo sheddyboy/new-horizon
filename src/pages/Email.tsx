@@ -54,7 +54,7 @@ const Email = () => {
         <div
           className={styles.cancel}
           onClick={() => {
-            navigate("/");
+            navigate("/share");
           }}
         >
           Cancel
