@@ -7,8 +7,8 @@ import Wrapper from "../mqtt_wrapper";
 
 const Create = () => {
   const [slider, setSlider] = useState(0);
-  const [vision, setVision] = useState("");
-  const [action, setAction] = useState("");
+  const [vision, setVision] = useState(0);
+  const [action, setAction] = useState(0);
   const navigate = useNavigate();
 
   const visionGallary = [
@@ -27,9 +27,13 @@ const Create = () => {
   };
 
   const handleCreate = () => {
-    Wrapper.send("Vision", vision);
-    Wrapper.send("Action", action);
-    Wrapper.send("Slider", slider);
+    try {
+      Wrapper.send("Vision", visionGallary[vision].image);
+      Wrapper.send("Action", actionGallary[action].image);
+      Wrapper.send("Slider", slider);
+    } catch (error) {
+      alert(error);
+    }
   };
 
   return (
@@ -38,6 +42,9 @@ const Create = () => {
         <p className={styles.title}>Swipe to adjust your horizon</p>
         <div className={styles.gallary}>
           <Swiper
+            onSlideChange={(swiper) => {
+              setVision(swiper.activeIndex);
+            }}
             slidesPerView={"auto"}
             centeredSlides={true}
             spaceBetween={20}
@@ -54,6 +61,9 @@ const Create = () => {
             ))}
           </Swiper>
           <Swiper
+            onSlideChange={(swiper) => {
+              setAction(swiper.activeIndex);
+            }}
             slidesPerView={"auto"}
             centeredSlides={true}
             spaceBetween={20}
