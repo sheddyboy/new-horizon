@@ -3,19 +3,39 @@ import styles from "../styles/Create.module.scss";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import Wrapper from "../mqtt_wrapper";
 
 const Create = () => {
   const [slider, setSlider] = useState(0);
+  const [vision, setVision] = useState("");
+  const [action, setAction] = useState("");
   const navigate = useNavigate();
+
+  const visionGallary = [
+    { id: "1", image: "/Photo-booth2 3 (1).png" },
+    { id: "2", image: "/Photo-booth2 1.png" },
+    { id: "3", image: "/Photo-booth2 5 (1).png" },
+  ];
+  const actionGallary = [
+    { id: "1", image: "/Photo-booth 1.png" },
+    { id: "2", image: "/Photo-booth 2.png" },
+    { id: "3", image: "/Photo-booth2 6.png" },
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSlider(Number(e.target.value));
   };
 
+  const handleCreate = () => {
+    Wrapper.send("Vision", vision);
+    Wrapper.send("Action", action);
+    Wrapper.send("Slider", slider);
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.galleryWrapper}>
-        <p className={styles.title}>Swipe left to choose your horizon</p>
+        <p className={styles.title}>Swipe to adjust your horizon</p>
         <div className={styles.gallary}>
           <Swiper
             slidesPerView={"auto"}
@@ -25,24 +45,13 @@ const Create = () => {
             style={{ display: "flex", justifyContent: "center" }}
           >
             <p className={styles.vision}>Vision</p>
-            <SwiperSlide>
-              <div className={styles.imageWrapperTop}>
-                <img src="/Photo-booth2 3 (1).png" alt="" />
-                {/* <p>Vision</p> */}
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={styles.imageWrapperTop}>
-                <img src="/Photo-booth2 1.png" alt="" />
-                {/* <p>Vision</p> */}
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={styles.imageWrapperTop}>
-                <img src="/Photo-booth2 5 (1).png" alt="" />
-                {/* <p>Vision</p> */}
-              </div>
-            </SwiperSlide>
+            {visionGallary.map((i) => (
+              <SwiperSlide key={i.id}>
+                <div className={styles.imageWrapperTop}>
+                  <img src={i.image} alt="" />
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
           <Swiper
             slidesPerView={"auto"}
@@ -52,22 +61,13 @@ const Create = () => {
             style={{ display: "flex", justifyContent: "center" }}
           >
             <p className={styles.action}>Action</p>
-
-            <SwiperSlide>
-              <div className={styles.imageWrapperBottom}>
-                <img src="/Photo-booth 1.png" alt="" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={styles.imageWrapperBottom}>
-                <img src="/Photo-booth 2.png" alt="" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={styles.imageWrapperBottom}>
-                <img src="/Photo-booth2 6.png" alt="" />
-              </div>
-            </SwiperSlide>
+            {actionGallary.map((i) => (
+              <SwiperSlide key={i.id}>
+                <div className={styles.imageWrapperBottom}>
+                  <img src={i.image} alt="" />
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
         <div className={styles.gallarySlider}>
@@ -95,6 +95,7 @@ const Create = () => {
       <div className={styles.createBtn}>
         <button
           onClick={() => {
+            handleCreate();
             navigate("/camera");
           }}
         >
