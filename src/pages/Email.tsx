@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Wrapper from "../mqtt_wrapper";
 
 const Email = () => {
+  let height = window.innerHeight;
   const [disabled, setDisabled] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
   const emailRef = useRef<HTMLInputElement>(null);
@@ -28,6 +29,7 @@ const Email = () => {
       onSubmit={(e) => {
         handleSubmit(e);
       }}
+      style={{ height: height < 670 ? "100vh" : "" }}
     >
       <div className={styles.top}>
         <div className={styles.inputWrapper}>

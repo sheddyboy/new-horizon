@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Wrapper from "../mqtt_wrapper";
 
 const Camera = () => {
+  let height = window.innerHeight;
   const videoRef = useRef<HTMLVideoElement>(null);
   const navigate = useNavigate();
   const [toggle, setToggle] = useState(false);
@@ -41,7 +42,10 @@ const Camera = () => {
   // }, [videoRef]);
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      style={{ height: height < 670 ? "100vh" : "" }}
+    >
       {!cameraToggle && (
         <div className={styles.top}>
           {!toggle && <h1>Look at camera in front of you</h1>}

@@ -4,11 +4,15 @@ import { useNavigate } from "react-router-dom";
 import Wrapper from "../mqtt_wrapper";
 
 const Share = () => {
+  let height = window.innerHeight;
   const [toggle, setToggle] = useState(false);
   const [terms, setTerms] = useState(false);
   const navigate = useNavigate();
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      style={{ height: height < 670 ? "100vh" : "" }}
+    >
       <div className={styles.backgroungImage}></div>
       <div className={styles.top}>
         <img src="/LOGO.svg" alt="logo" />

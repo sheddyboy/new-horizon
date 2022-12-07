@@ -4,6 +4,8 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import Wrapper from "./mqtt_wrapper";
 
 function App() {
+  let height = window.innerHeight;
+
   const [searchParams] = useSearchParams();
   const [mqttData] = useState({
     mqttServer: searchParams.get("mqtt_server"),
@@ -31,7 +33,10 @@ function App() {
   }, [mqttData]);
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      style={{ height: height < 670 ? "100vh" : "" }}
+    >
       <div className={styles.backgroungImage}></div>
       <div className={styles.top}>
         <img src="/LOGO.svg" alt="logo" />
