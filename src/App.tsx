@@ -19,7 +19,8 @@ function App() {
       mqttData.user ? mqttData.user : "",
       mqttData.password ? mqttData.password : ""
     );
-    // Wrapper.client?.on("connect", () => router.push("/interact"));
+    Wrapper.client?.on("connect", () => navigate("/"));
+    Wrapper.client?.on("close", () => navigate("/error"));
     Wrapper.client?.on("message", async (topic, message, packet) => {
       if (topic.endsWith("timeout")) {
         navigate("/");
