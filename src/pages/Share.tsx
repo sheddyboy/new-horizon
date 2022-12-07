@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/Share.module.scss";
 import { useNavigate } from "react-router-dom";
+import Wrapper from "../mqtt_wrapper";
 
 const Share = () => {
   const [toggle, setToggle] = useState(false);
@@ -17,6 +18,11 @@ const Share = () => {
             <div
               className={styles.checkbox}
               onClick={() => {
+                try {
+                  Wrapper.send("Checkbox", "");
+                } catch (err) {
+                  console.log(err);
+                }
                 setTerms((terms) => !terms);
               }}
             >
@@ -38,6 +44,11 @@ const Share = () => {
           <button
             disabled={!terms}
             onClick={() => {
+              try {
+                Wrapper.send("Share", "");
+              } catch (err) {
+                console.log(err);
+              }
               setToggle(true);
             }}
           >
@@ -48,6 +59,11 @@ const Share = () => {
       <div className={styles.bottom}>
         <button
           onClick={() => {
+            try {
+              Wrapper.send("Send to Email", "");
+            } catch (err) {
+              console.log(err);
+            }
             navigate("/email");
           }}
         >
@@ -55,6 +71,11 @@ const Share = () => {
         </button>
         <button
           onClick={() => {
+            try {
+              Wrapper.send("End", "");
+            } catch (err) {
+              console.log(err);
+            }
             navigate("/");
           }}
         >

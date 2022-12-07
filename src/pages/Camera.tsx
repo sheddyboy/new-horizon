@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "../styles/Camera.module.scss";
 import { useNavigate } from "react-router-dom";
+import Wrapper from "../mqtt_wrapper";
 
 const Camera = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -53,6 +54,11 @@ const Camera = () => {
             className={styles.retake}
             disabled={disabled}
             onClick={() => {
+              try {
+                Wrapper.send("Retake", "");
+              } catch (err) {
+                console.log(err);
+              }
               navigate("/create");
             }}
           >
@@ -62,6 +68,11 @@ const Camera = () => {
             className={styles.next}
             disabled={disabled}
             onClick={() => {
+              try {
+                Wrapper.send("Next", "");
+              } catch (err) {
+                console.log(err);
+              }
               navigate("/share");
             }}
           >

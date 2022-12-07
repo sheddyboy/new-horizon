@@ -19,10 +19,14 @@ function App() {
       mqttData.user ? mqttData.user : "",
       mqttData.password ? mqttData.password : ""
     );
-
-    // return () => {
-    //   Wrapper.send("connected", 0);
-    // };
+    // Wrapper.client?.on("connect", () => router.push("/interact"));
+    Wrapper.client?.on("message", async (topic, message, packet) => {
+      if (topic.endsWith("timeout")) {
+        navigate("/");
+        await Wrapper.pre_disconnect();
+        Wrapper.client?.end(true);
+      }
+    });
   }, [mqttData]);
 
   return (
@@ -30,11 +34,17 @@ function App() {
       <div className={styles.backgroungImage}></div>
       <div className={styles.top}>
         <img src="/LOGO.svg" alt="logo" />
-        <h1>Create Your New Horizon</h1>
+        <h1>Create Your Own Horizon</h1>
       </div>
       <div className={styles.bottom}>
         <button
           onClick={() => {
+            try {
+              Wrapper.send("Start", "");
+            } catch (err) {
+              console.log(err);
+            }
+
             navigate("/create");
           }}
         >

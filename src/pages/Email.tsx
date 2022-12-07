@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import styles from "../styles/Email.module.scss";
 import { useNavigate } from "react-router-dom";
+import Wrapper from "../mqtt_wrapper";
 
 const Email = () => {
   const [disabled, setDisabled] = useState<boolean>(true);
@@ -36,6 +37,11 @@ const Email = () => {
             type="email"
             placeholder="Email"
             onChange={(e) => {
+              try {
+                Wrapper.send("Email_Input", emailRef);
+              } catch (err) {
+                console.log(err);
+              }
               handleChange(e);
             }}
           />
@@ -54,12 +60,28 @@ const Email = () => {
         <div
           className={styles.cancel}
           onClick={() => {
+            try {
+              Wrapper.send("Cancel", "");
+            } catch (err) {
+              console.log(err);
+            }
             navigate("/share");
           }}
         >
           Cancel
         </div>
-        <button disabled={disabled} type="submit" className={styles.send}>
+        <button
+          disabled={disabled}
+          type="submit"
+          className={styles.send}
+          onClick={() => {
+            try {
+              Wrapper.send("Send", "");
+            } catch (err) {
+              console.log(err);
+            }
+          }}
+        >
           Send
         </button>
       </div>

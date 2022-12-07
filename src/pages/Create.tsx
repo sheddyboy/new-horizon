@@ -26,16 +26,6 @@ const Create = () => {
     setSlider(Number(e.target.value));
   };
 
-  const handleCreate = () => {
-    try {
-      Wrapper.send("Vision", visionGallary[vision].image);
-      Wrapper.send("Action", actionGallary[action].image);
-      Wrapper.send("Slider", slider);
-    } catch (error) {
-      alert(error);
-    }
-  };
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.galleryWrapper}>
@@ -45,6 +35,11 @@ const Create = () => {
             onSwiper={(swiper) => (swiper.activeIndex = vision)}
             onSlideChange={(swiper) => {
               setVision(swiper.activeIndex);
+              try {
+                Wrapper.send("Vision", visionGallary[vision].id);
+              } catch (err) {
+                console.log(err);
+              }
             }}
             slidesPerView={"auto"}
             centeredSlides={true}
@@ -65,6 +60,11 @@ const Create = () => {
             onSwiper={(swiper) => (swiper.activeIndex = action)}
             onSlideChange={(swiper) => {
               setAction(swiper.activeIndex);
+              try {
+                Wrapper.send("Action", actionGallary[action].id);
+              } catch (err) {
+                console.log(err);
+              }
             }}
             slidesPerView={"auto"}
             centeredSlides={true}
@@ -93,6 +93,11 @@ const Create = () => {
               value={slider}
               onChange={(e) => {
                 handleChange(e);
+                try {
+                  Wrapper.send("Slider", slider);
+                } catch (err) {
+                  console.log(err);
+                }
               }}
             />
             <div
@@ -107,7 +112,11 @@ const Create = () => {
       <div className={styles.createBtn}>
         <button
           onClick={() => {
-            handleCreate();
+            try {
+              Wrapper.send("Create", "");
+            } catch (err) {
+              console.log(err);
+            }
             navigate("/camera");
           }}
         >
