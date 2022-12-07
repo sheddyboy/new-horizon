@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import styles from "../styles/Create.module.scss";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Wrapper from "../mqtt_wrapper";
+import { CreateCtx } from "../context/CreateProvider";
 
 const Create = () => {
-  const [slider, setSlider] = useState(0);
-  const [vision, setVision] = useState(0);
-  const [action, setAction] = useState(0);
+  const { action, setAction, setSlider, setVision, slider, vision } =
+    useContext(CreateCtx);
   const navigate = useNavigate();
 
   const visionGallary = [
@@ -42,6 +42,7 @@ const Create = () => {
         <p className={styles.title}>Swipe to adjust your horizon</p>
         <div className={styles.gallary}>
           <Swiper
+            onSwiper={(swiper) => (swiper.activeIndex = vision)}
             onSlideChange={(swiper) => {
               setVision(swiper.activeIndex);
             }}
@@ -61,6 +62,7 @@ const Create = () => {
             ))}
           </Swiper>
           <Swiper
+            onSwiper={(swiper) => (swiper.activeIndex = action)}
             onSlideChange={(swiper) => {
               setAction(swiper.activeIndex);
             }}
