@@ -8,19 +8,22 @@ import Create from "./pages/Create";
 import Camera from "./pages/Camera";
 import Share from "./pages/Share";
 import Email from "./pages/Email";
+import CreateProvider from "./context/CreateProvider";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/create" element={<Create />} />
-        <Route path="/camera" element={<Camera />} />
-        <Route path="/share" element={<Share />} />
-        <Route path="/email" element={<Email />} />
-      </Routes>
+      <CreateProvider>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/camera" element={<Camera />} />
+          <Route path="/share" element={<Share />} />
+          <Route path="/email" element={<Email />} />
+        </Routes>
+      </CreateProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
