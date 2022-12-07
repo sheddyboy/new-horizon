@@ -37,11 +37,6 @@ const Email = () => {
             type="email"
             placeholder="Email"
             onChange={(e) => {
-              try {
-                Wrapper.send("Email_Input", emailRef);
-              } catch (err) {
-                console.log(err);
-              }
               handleChange(e);
             }}
           />
@@ -76,7 +71,7 @@ const Email = () => {
           className={styles.send}
           onClick={() => {
             try {
-              Wrapper.send("Send", "");
+              Wrapper.send("Send", emailRef.current?.value);
             } catch (err) {
               console.log(err);
             }
