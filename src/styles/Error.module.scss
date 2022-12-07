@@ -1,0 +1,31 @@
+.wrapper {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+  padding-right: 25px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-family: "Blue Sky Standard";
+    font-style: normal;
+    font-weight: 420;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #000000;
+  }
+
+  p {
+    font-family: "Blue Sky Standard";
+    font-style: normal;
+    font-weight: 420;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000;
+  }
+}

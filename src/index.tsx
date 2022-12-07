@@ -9,6 +9,7 @@ import Camera from "./pages/Camera";
 import Share from "./pages/Share";
 import Email from "./pages/Email";
 import CreateProvider from "./context/CreateProvider";
+import Error from "./pages/Error";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -22,6 +23,7 @@ root.render(
           <Route path="/camera" element={<Camera />} />
           <Route path="/share" element={<Share />} />
           <Route path="/email" element={<Email />} />
+          <Route path="/error" element={<Error />} />
         </Routes>
       </CreateProvider>
     </BrowserRouter>
