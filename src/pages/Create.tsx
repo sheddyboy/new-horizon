@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import styles from "../styles/Create.module.scss";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,6 +7,7 @@ import Wrapper from "../mqtt_wrapper";
 import { CreateCtx } from "../context/CreateProvider";
 
 const Create = () => {
+  const sliderRef = useRef<HTMLInputElement>(null);
   const { action, setAction, setSlider, setVision, slider, vision } =
     useContext(CreateCtx);
   const navigate = useNavigate();
@@ -15,11 +16,17 @@ const Create = () => {
     { id: "1", image: "/Photo-booth2 3 (1).png" },
     { id: "2", image: "/Photo-booth2 1.png" },
     { id: "3", image: "/Photo-booth2 5 (1).png" },
+    { id: "4", image: "/Photo-booth2 3 (1).png" },
+    { id: "5", image: "/Photo-booth2 1.png" },
+    { id: "6", image: "/Photo-booth2 5 (1).png" },
   ];
   const actionGallary = [
     { id: "1", image: "/Photo-booth 1.png" },
     { id: "2", image: "/Photo-booth 2.png" },
     { id: "3", image: "/Photo-booth2 6.png" },
+    { id: "4", image: "/Photo-booth 1.png" },
+    { id: "5", image: "/Photo-booth 2.png" },
+    { id: "6", image: "/Photo-booth2 6.png" },
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,7 +43,7 @@ const Create = () => {
             onSlideChange={(swiper) => {
               setVision(swiper.activeIndex);
               try {
-                Wrapper.send("Vision", visionGallary[vision].id);
+                Wrapper.send("Vision", visionGallary[swiper.activeIndex].id);
               } catch (err) {
                 console.log(err);
               }
@@ -61,7 +68,7 @@ const Create = () => {
             onSlideChange={(swiper) => {
               setAction(swiper.activeIndex);
               try {
-                Wrapper.send("Action", actionGallary[action].id);
+                Wrapper.send("Action", actionGallary[swiper.activeIndex].id);
               } catch (err) {
                 console.log(err);
               }
@@ -90,11 +97,12 @@ const Create = () => {
               min="0"
               max="100"
               id="slider"
+              ref={sliderRef}
               value={slider}
               onChange={(e) => {
                 handleChange(e);
                 try {
-                  Wrapper.send("Slider", slider);
+                  Wrapper.send("Slider", sliderRef.current?.value);
                 } catch (err) {
                   console.log(err);
                 }
