@@ -19,7 +19,7 @@ const Share = () => {
               className={styles.checkbox}
               onClick={() => {
                 try {
-                  Wrapper.send("Checkbox", "");
+                  Wrapper.send("Checkbox", !terms);
                 } catch (err) {
                   console.log(err);
                 }
@@ -60,7 +60,7 @@ const Share = () => {
         <button
           onClick={() => {
             try {
-              Wrapper.send("Send to Email", "");
+              Wrapper.send("Send_to_email", "");
             } catch (err) {
               console.log(err);
             }
