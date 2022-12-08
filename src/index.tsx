@@ -10,6 +10,7 @@ import Share from "./pages/Share";
 import Email from "./pages/Email";
 import CreateProvider from "./context/CreateProvider";
 import Error from "./pages/Error";
+import Sent from "./pages/Sent";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -24,6 +25,7 @@ root.render(
           <Route path="/share" element={<Share />} />
           <Route path="/email" element={<Email />} />
           <Route path="/error" element={<Error />} />
+          <Route path="/sent" element={<Sent />} />
         </Routes>
       </CreateProvider>
     </BrowserRouter>
