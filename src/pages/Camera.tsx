@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import styles from "../styles/Camera.module.scss";
 import { useNavigate } from "react-router-dom";
 import Wrapper from "../mqtt_wrapper";
+import { CreateCtx } from "../context/CreateProvider";
 
 const Camera = () => {
-  let height = window.innerHeight;
+  const { height } = useContext(CreateCtx);
   const videoRef = useRef<HTMLVideoElement>(null);
   const navigate = useNavigate();
   const [toggle, setToggle] = useState(false);
@@ -44,7 +45,7 @@ const Camera = () => {
   return (
     <div
       className={styles.wrapper}
-      style={{ height: height < 670 ? "100vh" : "" }}
+      style={{ height: height < 670 ? "100vh" : "", transition: "all 0.5s" }}
     >
       {!cameraToggle && (
         <div className={styles.top}>

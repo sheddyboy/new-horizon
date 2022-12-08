@@ -7,9 +7,8 @@ import Wrapper from "../mqtt_wrapper";
 import { CreateCtx } from "../context/CreateProvider";
 
 const Create = () => {
-  let height = window.innerHeight;
   const sliderRef = useRef<HTMLInputElement>(null);
-  const { action, setAction, setSlider, setVision, slider, vision } =
+  const { action, setAction, setSlider, setVision, slider, vision, height } =
     useContext(CreateCtx);
   const navigate = useNavigate();
 
@@ -37,7 +36,7 @@ const Create = () => {
   return (
     <div
       className={styles.wrapper}
-      style={{ height: height < 670 ? "100vh" : "" }}
+      style={{ height: height < 670 ? "100vh" : "", transition: "all 0.5s" }}
     >
       <div className={styles.galleryWrapper}>
         <p className={styles.title}>Swipe to adjust your horizon</p>

@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "../styles/Share.module.scss";
 import { useNavigate } from "react-router-dom";
 import Wrapper from "../mqtt_wrapper";
+import { CreateCtx } from "../context/CreateProvider";
 
 const Share = () => {
-  let height = window.innerHeight;
+  const { height } = useContext(CreateCtx);
   const [toggle, setToggle] = useState(false);
   const [terms, setTerms] = useState(false);
   const navigate = useNavigate();
   return (
     <div
       className={styles.wrapper}
-      style={{ height: height < 670 ? "100vh" : "" }}
+      style={{ height: height < 670 ? "100vh" : "", transition: "all 0.5s" }}
     >
       <div className={styles.backgroungImage}></div>
       <div className={styles.top}>

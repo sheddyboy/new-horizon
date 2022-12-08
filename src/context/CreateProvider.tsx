@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import useWindowSize from "../hooks/useWindowSize";
 
 interface MqttProps {
   mqttServer: string;
@@ -16,6 +17,7 @@ interface CreateProps {
   setSlider: React.Dispatch<React.SetStateAction<number>>;
   mqttData: MqttProps;
   setMqttData: React.Dispatch<React.SetStateAction<MqttProps>>;
+  height: number;
 }
 
 interface CreateProviderProps {
@@ -31,12 +33,13 @@ export const defaultCreateValues: CreateProps = {
   setSlider: () => null,
   mqttData: { mqttServer: "", password: "", sessionId: "", user: "" },
   setMqttData: () => null,
+  height: 0,
 };
 export const CreateCtx = createContext<CreateProps>(defaultCreateValues);
 
 const CreateProvider = ({ children }: CreateProviderProps) => {
+  const { height } = useWindowSize();
   const [searchParams] = useSearchParams();
-
   const [slider, setSlider] = useState(0);
   const [vision, setVision] = useState(0);
   const [action, setAction] = useState(0);
@@ -54,6 +57,7 @@ const CreateProvider = ({ children }: CreateProviderProps) => {
         vision,
         action,
         mqttData,
+        height,
         setAction,
         setSlider,
         setVision,

@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import styles from "../styles/Email.module.scss";
 import { useNavigate } from "react-router-dom";
 import Wrapper from "../mqtt_wrapper";
+import { CreateCtx } from "../context/CreateProvider";
 
 const Email = () => {
-  let height = window.innerHeight;
+  const { height } = useContext(CreateCtx);
   const [disabled, setDisabled] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
   const emailRef = useRef<HTMLInputElement>(null);
@@ -29,7 +30,7 @@ const Email = () => {
       onSubmit={(e) => {
         handleSubmit(e);
       }}
-      style={{ height: height < 670 ? "100vh" : "" }}
+      style={{ height: height < 670 ? "100vh" : "", transition: "all 0.5s" }}
     >
       <div className={styles.top}>
         <div className={styles.inputWrapper}>
