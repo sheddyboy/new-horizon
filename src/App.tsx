@@ -1,25 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./styles/App.module.scss";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Wrapper from "./mqtt_wrapper";
+import { CreateCtx } from "./context/CreateProvider";
 
 function App() {
   let height = window.innerHeight;
 
-  const [searchParams] = useSearchParams();
-  const [mqttData] = useState({
-    mqttServer: searchParams.get("mqtt_server"),
-    sessionId: searchParams.get("session_id"),
-    user: searchParams.get("user"),
-    password: searchParams.get("password"),
-  });
+  const { mqttData } = useContext(CreateCtx);
   const navigate = useNavigate();
   useEffect(() => {
     Wrapper.connect(
-      mqttData.mqttServer ? mqttData.mqttServer : "",
-      mqttData.sessionId ? mqttData.sessionId : "",
-      mqttData.user ? mqttData.user : "",
-      mqttData.password ? mqttData.password : ""
+      mqttData.mqttServer,
+      mqttData.sessionId,
+      mqttData.user,
+      mqttData.password
     );
     Wrapper.client?.on("connect", () => navigate("/"));
     Wrapper.client?.on("close", () => navigate("/error"));
