@@ -20,7 +20,7 @@ const Email = () => {
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/sent");
   };
 
   return (
