@@ -128,10 +128,10 @@ const Create = () => {
             } catch (err) {
               console.log(err);
             }
-            navigate("/camera");
+            navigate("/capture");
           }}
         >
-          Create
+          Ready
         </button>
       </div>
     </div>
