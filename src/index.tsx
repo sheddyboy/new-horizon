@@ -11,6 +11,7 @@ import Email from "./pages/Email";
 import CreateProvider from "./context/CreateProvider";
 import Error from "./pages/Error";
 import Sent from "./pages/Sent";
+import Capture from "./pages/Capture";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -26,6 +27,7 @@ root.render(
           <Route path="/email" element={<Email />} />
           <Route path="/error" element={<Error />} />
           <Route path="/sent" element={<Sent />} />
+          <Route path="/capture" element={<Capture />} />
         </Routes>
       </CreateProvider>
     </BrowserRouter>
