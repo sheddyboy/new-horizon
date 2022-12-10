@@ -50,7 +50,12 @@ const Camera = () => {
       {!cameraToggle && (
         <div className={styles.top}>
           {!toggle && <h1>Look at camera</h1>}
-          {toggle && <h1>You’ve just created your New horizon</h1>}
+          {toggle && (
+            <h1>
+              You just created your <br />
+              own Horizon
+            </h1>
+          )}
         </div>
       )}
       {!cameraToggle && (
