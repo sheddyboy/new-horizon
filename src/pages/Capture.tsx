@@ -11,7 +11,7 @@ const Capture = () => {
   return (
     <div
       className={styles.wrapper}
-      style={{ height: height < 710 ? "100vh" : "", transition: "all 0.5s" }}
+      style={{ height: height < 690 ? "100vh" : "", transition: "all 0.5s" }}
     >
       <h1>Now stand in front of the projector</h1>
       <button

@@ -40,7 +40,7 @@ const Create = () => {
   return (
     <div
       className={styles.wrapper}
-      style={{ height: height < 710 ? "100vh" : "", transition: "all 0.5s" }}
+      style={{ height: height < 690 ? "100vh" : "", transition: "all 0.5s" }}
     >
       <div className={styles.galleryWrapper}>
         <p className={styles.title}>Swipe to adjust your horizon</p>

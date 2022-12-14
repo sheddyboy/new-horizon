@@ -30,7 +30,7 @@ const Email = () => {
       onSubmit={(e) => {
         handleSubmit(e);
       }}
-      style={{ height: height < 710 ? "100vh" : "", transition: "all 0.5s" }}
+      style={{ height: height < 690 ? "100vh" : "", transition: "all 0.5s" }}
     >
       <div className={styles.top}>
         <div className={styles.inputWrapper}>
