@@ -13,20 +13,24 @@ const Create = () => {
   const navigate = useNavigate();
 
   const visionGallary = [
-    { id: "1", image: "/Photo-booth2 3 (1).png" },
-    { id: "2", image: "/Photo-booth2 1.png" },
-    { id: "3", image: "/Photo-booth2 5 (1).png" },
-    { id: "4", image: "/Photo-booth2 3 (1).png" },
-    { id: "5", image: "/Photo-booth2 1.png" },
-    { id: "6", image: "/Photo-booth2 5 (1).png" },
+    { id: "1", image: "./images/Vision/1.png" },
+    { id: "2", image: "./images/Vision/2.png" },
+    { id: "3", image: "./images/Vision/3.png" },
+    { id: "4", image: "./images/Vision/4.png" },
+    { id: "5", image: "./images/Vision/5.png" },
+    { id: "6", image: "./images/Vision/6.png" },
+    { id: "7", image: "./images/Vision/7.png" },
+    { id: "8", image: "./images/Vision/8.png" },
   ];
   const actionGallary = [
-    { id: "1", image: "/Photo-booth 1.png" },
-    { id: "2", image: "/Photo-booth 2.png" },
-    { id: "3", image: "/Photo-booth2 6.png" },
-    { id: "4", image: "/Photo-booth 1.png" },
-    { id: "5", image: "/Photo-booth 2.png" },
-    { id: "6", image: "/Photo-booth2 6.png" },
+    { id: "1", image: "./images/Action/1.png" },
+    { id: "2", image: "./images/Action/2.png" },
+    { id: "3", image: "./images/Action/3.png" },
+    { id: "4", image: "./images/Action/4.png" },
+    { id: "5", image: "./images/Action/5.png" },
+    { id: "6", image: "./images/Action/6.png" },
+    { id: "7", image: "./images/Action/7.png" },
+    { id: "8", image: "./images/Action/8.png" },
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
