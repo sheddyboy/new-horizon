@@ -28,7 +28,7 @@ function App() {
   return (
     <div
       className={styles.wrapper}
-      style={{ height: height < 670 ? "100vh" : "", transition: "all 0.5s" }}
+      style={{ height: height < 710 ? "100vh" : "", transition: "all 0.5s" }}
     >
       <div className={styles.backgroungImage}></div>
       <div className={styles.top}>
