@@ -13,7 +13,7 @@ const Capture = () => {
       className={styles.wrapper}
       style={{ height: height < 690 ? "100vh" : "", transition: "all 0.5s" }}
     >
-      <h1>Ready to take a short video</h1>
+      <h1>Ready to take a short video?</h1>
       <button
         onClick={() => {
           try {
